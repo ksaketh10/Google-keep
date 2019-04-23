@@ -16,6 +16,8 @@ class InputTask extends Component {
             task: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.onChangeTitle = this.onChangeTitle.bind(this)
+        this.onChangeTask = this.onChangeTask.bind(this)
     }
 
     handleSubmit(event) {
@@ -25,20 +27,34 @@ class InputTask extends Component {
         this.setState({ title: "", task: "" })
     }
 
-    render() {
-        const { title } = this.state;
-        return (
+    onChangeTitle(event) {
+        event.preventDefault()
+        console.log(event.target.value)
+        this.setState({title : event.target.value, task : this.state.task})
+    }
 
+    onChangeTask(event) {
+        event.preventDefault()
+        console.log(event.target.value)
+        this.setState({title : this.state.title, task : event.target.value})
+    }
+
+    render() {
+        return (
             <form onSubmit={this.handleSubmit}>
-                <div class="form-row">
-                    <div class="col-3">
-                        <input type="text" class="form-control" placeholder="Title" />
+                <div className="form-row">
+                    <div className="col-12">
+                        <input type="text" className="form-control" placeholder="Title" onChange={this.onChangeTitle}/>
                     </div>
-                    <div class="col-6">
-                        <input type="text" class="form-control" placeholder="Task" />
+                </div>
+                <div className="form-row">
+                    <div className="col-12">
+                        <textarea type="text" className="form-control" placeholder="Task" onChange={this.onChangeTask}/>
                     </div>
-                    <div class="col-3">
-                        <button type="submit" class="btn btn-primary mb-2">Add</button>
+                </div>
+                <div className="form-row mb-4">
+                    <div className="col-3">
+                        <button type="submit" className="btn btn-primary mb-2">Add</button>
                     </div>
                 </div>
             </form>
