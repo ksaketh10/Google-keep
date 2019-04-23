@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 function mapDispatchToProps(dispatch) {
     return {
-        addTask: task => dispatch(addTask(task))
+        addTask1: task => dispatch(addTask(task))
     };
 }
 
@@ -23,19 +23,17 @@ class InputTask extends Component {
     handleSubmit(event) {
         event.preventDefault()
         const { title, task } = this.state
-        this.props.addTask({ title, task })
+        this.props.addTask1({ title, task })
         this.setState({ title: "", task: "" })
     }
 
     onChangeTitle(event) {
         event.preventDefault()
-        console.log(event.target.value)
         this.setState({title : event.target.value, task : this.state.task})
     }
 
     onChangeTask(event) {
         event.preventDefault()
-        console.log(event.target.value)
         this.setState({title : this.state.title, task : event.target.value})
     }
 
