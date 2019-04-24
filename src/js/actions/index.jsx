@@ -6,4 +6,4 @@ export function addTask(task) {
 
 export function getData() {
     return { type: "DATA_REQUESTED" };
-  }
+}

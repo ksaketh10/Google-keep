@@ -1,0 +1,15 @@
+{
+    "setupTestFrameworkScriptFile": "<rootDir>/tests/setup/setupTests.js",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      ".*\\.png$": "<rootDir>/tests/mocks/MockImageImports.js",
+      "model.service": "<rootDir>/tests/mocks/MockModelService.js",
+      "job.service": "<rootDir>/tests/mocks/MockJobService.js",
+      "dataset.service": "<rootDir>/tests/mocks/MockDatasetService.js",
+      "file-download": "<rootDir>/tests/mocks/MockFileDownload.js",
+      "DateTimePicker": "<rootDir>/tests/mocks/fileTransformer.js"
+    }
+  }

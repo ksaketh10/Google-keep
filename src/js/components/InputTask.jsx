@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 function mapDispatchToProps(dispatch) {
     return {
-        addTask1: task => dispatch(addTask(task))
+        addTask: task => dispatch(addTask(task))
     };
 }
 
@@ -23,7 +23,7 @@ class InputTask extends Component {
     handleSubmit(event) {
         event.preventDefault()
         const { title, task } = this.state
-        this.props.addTask1({ title, task })
+        this.props.addTask({ title, task })
         this.setState({ title: "", task: "" })
     }
 
@@ -42,17 +42,17 @@ class InputTask extends Component {
             <form onSubmit={this.handleSubmit}>
                 <div className="form-row">
                     <div className="col-12">
-                        <input type="text" className="form-control" placeholder="Title" onChange={this.onChangeTitle}/>
+                        <input type="text" className="form-control title" placeholder="Title" onChange={this.onChangeTitle}/>
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="col-12">
-                        <textarea type="text" className="form-control" placeholder="Task" onChange={this.onChangeTask}/>
+                        <textarea type="text" className="form-control task" placeholder="Task" onChange={this.onChangeTask}/>
                     </div>
                 </div>
                 <div className="form-row mb-4">
                     <div className="col-3">
-                        <button type="submit" className="btn btn-primary mb-2">Add</button>
+                        <button type="submit" className="btn btn-primary mb-2 add">Add</button>
                     </div>
                 </div>
             </form>

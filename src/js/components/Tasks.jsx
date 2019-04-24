@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 const mapStateToProps = state => {
-  console.log(state)
   return { tasks: state.tasks };
 };
 const tasksList = ({ tasks }) => (
