@@ -3,21 +3,21 @@ import { connect } from "react-redux";
 const mapStateToProps = state => {
   return { tasks: state.tasks };
 };
-const tasksList = ({ tasks }) => (
+export const TasksList = ({ tasks }) => (
   <ul className="list-group list-group-flush">
     {tasks.map(task => (
       <li className="list-group-item" key={task.title.toString()}>
         <div className="card">
           <div class="card-header">
-          <h5 className="card-title">{task.title}</h5>
+            <h5 className="card-title">{task.title}</h5>
           </div>
-            <div className="card-body">
-                <p className="card-text">{task.task}</p>
-            </div>
+          <div className="card-body">
+            <p className="card-text">{task.task}</p>
+          </div>
         </div>
       </li>
     ))}
   </ul>
 );
-const List = connect(mapStateToProps)(tasksList);
+const List = connect(mapStateToProps)(TasksList);
 export default List;

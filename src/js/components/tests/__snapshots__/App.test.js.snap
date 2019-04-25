@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component +++capturing Snapshot of Home 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="col-md-4 offset-md-1"
+  >
+    <h2>
+      Add a new Task
+    </h2>
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-row"
+      >
+        <div
+          className="col-12"
+        >
+          <input
+            className="form-control title"
+            onChange={[Function]}
+            placeholder="Title"
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          className="col-12"
+        >
+          <textarea
+            className="form-control task"
+            onChange={[Function]}
+            placeholder="Task"
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        className="form-row mb-4"
+      >
+        <div
+          className="col-3"
+        >
+          <button
+            className="btn btn-primary mb-2 add"
+            type="submit"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div
+    className="col-md-4 offset-md-1"
+  >
+    <h2>
+      Tasks
+    </h2>
+    <ul
+      className="list-group list-group-flush"
+    />
+  </div>
+  <div
+    className="col-md-4 offset-md-1"
+  >
+    <h2>
+      Tasks
+    </h2>
+    <ul
+      className="list-group list-group-flush"
+    />
+  </div>
+</div>
+`;

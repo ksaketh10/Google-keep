@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getData } from "../actions/index";
-class Post extends Component {
+export class Post extends Component {
   componentWillMount() {
     this.props.getData();
   }

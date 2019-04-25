@@ -4,7 +4,7 @@ export default function* watcherSaga() {
   yield takeEvery("DATA_REQUESTED", workerSaga);
 }
 
-function* workerSaga() {
+function* workerSaga() { 
   try {
     const payload = yield call(getData);
     yield put({ type: "DATA_LOADED", payload });

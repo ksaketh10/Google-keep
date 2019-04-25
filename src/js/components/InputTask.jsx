@@ -8,7 +8,7 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-class InputTask extends Component {
+export class InputTask extends Component {
     constructor() {
         super();
         this.state = {
