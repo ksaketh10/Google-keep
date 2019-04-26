@@ -1,23 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Paper, ListItem, List, ListItemText } from "@material-ui/core";
+
 const mapStateToProps = state => {
   return { tasks: state.tasks };
 };
 export const TasksList = ({ tasks }) => (
-  <ul className="list-group list-group-flush">
-    {tasks.map(task => (
-      <li className="list-group-item" key={task.title.toString()}>
-        <div className="card">
-          <div class="card-header">
-            <h5 className="card-title">{task.title}</h5>
-          </div>
-          <div className="card-body">
-            <p className="card-text">{task.task}</p>
-          </div>
-        </div>
-      </li>
-    ))}
-  </ul>
+  
+    <List>
+      <Paper>
+      {tasks.map(task => (
+        <ListItem key={task.title.toString()}>
+          <ListItemText primary={task.title} />
+          <ListItemText secondary={task.task} />
+        </ListItem>
+      ))}
+      </Paper>
+    </List>
 );
-const List = connect(mapStateToProps)(TasksList);
-export default List;
+const List1 = connect(mapStateToProps)(TasksList);
+export default List1;

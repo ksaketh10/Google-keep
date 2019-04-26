@@ -1,22 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getData } from "../actions/index";
-export class Post extends Component {
+import { Paper, ListItem, List, ListItemText } from "@material-ui/core";
+
+class Post extends Component {
   componentWillMount() {
     this.props.getData();
   }
   render() {
     return (
-      <ul className="list-group list-group-flush">
-        {this.props.articles.map(el => (
-          <li className="list-group-item" key={el.title.toString()}>
-            {el.title}
-          </li>
-        ))}
-      </ul>
+      <List>
+        <Paper>
+          {this.props.articles.map(el => (
+            <ListItem key={el.title.toString()}>
+              <ListItemText primary={el.title} />
+            </ListItem>
+          ))}
+        </Paper>
+      </List>
     );
   }
 }
+
 function mapStateToProps(state) {
   return {
     articles: state.remoteArticles.slice(0, 10)

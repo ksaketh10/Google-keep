@@ -120,6 +120,7 @@ describe('App component', () => {
         expect(renderedValue).toMatchSnapshot();
     });
 
+
     // it('Add a task and renders the content', () => {
     //     const wrapper = mount(<Provider store={store}>
     //         <App />

@@ -1,6 +1,8 @@
 import { addTask } from "../actions";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import TextField from '@material-ui/core/TextField'
+import { Paper, Button, Grid } from "@material-ui/core";
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -29,33 +31,52 @@ export class InputTask extends Component {
 
     onChangeTitle(event) {
         event.preventDefault()
-        this.setState({title : event.target.value, task : this.state.task})
+        this.setState({ title: event.target.value, task: this.state.task })
     }
 
     onChangeTask(event) {
         event.preventDefault()
-        this.setState({title : this.state.title, task : event.target.value})
+        this.setState({ title: this.state.title, task: event.target.value })
     }
 
     render() {
+        const { css } = this.props;
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className="form-row">
-                    <div className="col-12">
-                        <input type="text" className="form-control title" placeholder="Title" onChange={this.onChangeTitle}/>
-                    </div>
-                </div>
-                <div className="form-row">
-                    <div className="col-12">
-                        <textarea type="text" className="form-control task" placeholder="Task" onChange={this.onChangeTask}/>
-                    </div>
-                </div>
-                <div className="form-row mb-4">
-                    <div className="col-3">
-                        <button type="submit" className="btn btn-primary mb-2 add">Add</button>
-                    </div>
-                </div>
-            </form>
+            <Paper className={css.root}>
+                <form onSubmit={this.handleSubmit} className={css.form}>
+                    <Grid container spacing={24}>
+                        <Grid item xs={12}>
+                            <TextField
+                                name='title'
+                                label='Title'
+                                onChange={this.onChangeTitle}
+                                margin='normal'
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                name='task'
+                                label='Task'
+                                multiline={true}
+                                rows={4}
+                                rowsMax={8}
+                                className="task"
+                                onChange={this.onChangeTask}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Button
+                                type='submit'
+                                color='primary'
+                                variant='raised'
+                                className="add"
+                            >
+                                Add
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </form>
+            </Paper>
         );
     }
 }
